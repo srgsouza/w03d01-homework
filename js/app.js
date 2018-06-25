@@ -30,9 +30,10 @@ $(() => {
 
   console.log('Tomagotchi');
   class Tomagotchi {
-    constructor(name, age, hunger, sleepiness, boredom) {
+    constructor(name, age, image, hunger, sleepiness, boredom) {
       this.name = name;
       this.age = age;
+      this.image = image;
       this.hunger = hunger;
       this.sleepiness = sleepiness;
       this.boredom = boredom;
@@ -41,7 +42,12 @@ $(() => {
 
 
   // sushi ages very fast. must be eaten (disappear), or the mold
-  const pet = new Tomagotchi('sushi', 1, 1, 2, 3);
+  const pet = new Tomagotchi('sushi', 1, "images/01-sushi-solo.jpeg", 1, 2, 3);
+
+  // Insert Image
+  const $image = $('<img/>');
+  $image.attr('src', pet.image);
+  $('body').append($image);
   console.log(pet.name);
   
 });
