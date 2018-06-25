@@ -24,10 +24,25 @@
 // add an excercise method to your tomagotchi, that affects certain properties
 // Add anything you can think of, use your imagination
 
+// Pretiest, Creative, Functionality
+
 $(() => {
 
   console.log('Tomagotchi');
-  
+  class Tomagotchi {
+    constructor(name, age, hunger, sleepiness, boredom) {
+      this.name = name;
+      this.age = age;
+      this.hunger = hunger;
+      this.sleepiness = sleepiness;
+      this.boredom = boredom;
+    }
+  }
 
+
+  // sushi ages very fast. must be eaten (disappear), or the mold
+  const pet = new Tomagotchi('sushi', 1, 1, 2, 3);
+  console.log(pet.name);
+  
 });
 
