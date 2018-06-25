@@ -48,7 +48,9 @@ $(() => {
   const $image = $('<img/>');
   $image.attr('src', pet.image);
   $('body').append($image);
-  console.log(pet.name);
+  $('body').append(`Hunger Level (1 - 10): ${pet.hunger}`);
+  $('body').append(`Sleepiness Level (1 - 10): ${pet.sleepiness}`);
+  $('body').append(`Boredom Level (1 - 10): ${pet.boredom}`);
   
 });
 
