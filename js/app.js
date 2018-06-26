@@ -40,7 +40,6 @@ $(() => {
     }
   }
 
-
   // sushi ages very fast. must be eaten (disappear), or the mold
   const pet = new Tomagotchi('sushi', 1, "images/01-sushi-solo.jpeg", 1, 2, 3);
 
@@ -48,9 +47,52 @@ $(() => {
   const $image = $('<img/>');
   $image.attr('src', pet.image);
   $('body').append($image);
+
+  // Display metrics
   $('body').append(`Hunger Level (1 - 10): ${pet.hunger}`);
   $('body').append(`Sleepiness Level (1 - 10): ${pet.sleepiness}`);
   $('body').append(`Boredom Level (1 - 10): ${pet.boredom}`);
-  
+
+  // // add buttons
+  // // const actions = ["feed", "play", "lights" ];
+  // const actionsResults = [{"feed": "hunger"}, {"play": "boredom"}, {"lights": "sleepiness"} ];
+  // actionsResults.forEach(element => {
+  //   const $button = $('<button/>');
+  //   $button.text(element);
+  //   $('body').append($button);
+  //   $button.on('click', (e) => {
+  //     console.log(e.currentTarget.textContent);
+      
+  //   })
+  // });
+
+    const $feed = $('<button/>');
+    $feed.text('Feed'); 
+    $('body').append($feed);
+    $feed.on('click', (e) => {
+      pet.hunger -= 1;
+      console.log(`Hunger is now : ${pet.hunger}`);
+    })
+
+  const $play = $('<button/>');
+  $play.text('Play');
+  $('body').append($play);
+  $play.on('click', (e) => {
+    pet.boredom -= 1;
+    console.log(`Boredom is now : ${pet.boredom}`);
+  })
+
+
+  const $lights = $('<button/>');
+  $lights.text('Lights');
+  $('body').append($lights);
+  $lights.on('click', (e) => {
+    pet.sleepiness -= 1;
+    console.log(`Sleepines is now : ${pet.sleepiness}`);
+  })
+
+
+
+
 });
 
