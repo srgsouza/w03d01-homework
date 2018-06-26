@@ -1,12 +1,22 @@
-
-
-
-
-
-
-
-
-
-
-
+* {
+  margin: 0;
+  padding: 0;
 }
+
+.tomagotchi-div {
+  background-color: gray;  
+  display: inline-block;  
+}
+
+.image-div {
+  background-color: yellow; 
+}
+
+.stats-div {
+  background-color: green;
+}
+
+.actions-div {
+  background-color: orange;
+}
+
