@@ -218,6 +218,7 @@ $(() => { // main jquery function - process all jquery
       //  $tomaDiv.empty();
       $('.tomadiv').remove();
       $babyButton.hide();
+      addSquare();
       //restart game - TODO - this is not DRY (start function)
       petList.forEach(tomagotchi => {
         constructDivs(tomagotchi);
@@ -227,9 +228,18 @@ $(() => { // main jquery function - process all jquery
     });
   };
 
-  const reset = function () {
-
+ 
+  // TESTING
+  const addSquare = () => {
+    const square = $('<div/>');
+    // applyRandomColor(square);
+    $('.squares').append(square);
+    square.on('click', e => {
+      // disappear($(e.currentTarget)); //e.currentTarget is the stuff that got clicked
+      $(e.currentTarget).hide();
+    });
   }
+  // END of testing
 
   // creates a start button, calls main game function
   const start = function (tomagotchi) {

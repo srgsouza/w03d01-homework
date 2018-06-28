@@ -51,3 +51,20 @@
   display: block;
 }
 
+.squares div {
+  width:  80vh;
+  height: 70vh;
+  margin-right: 1%;
+  display: inline-block;
+  background-color:white;
+  background-image: url("../images/sushi-making-out.jpeg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  opacity: 1;
+}
+
+.square-image {
+  background-image: url("../images/08-sushi-making-out-2.jpeg");
+  background-repeat: no-repeat;
+  background-position: center; 
+}
