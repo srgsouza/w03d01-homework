@@ -52,26 +52,6 @@ $(() => { // main jquery function - process all jquery
     }
   } // End of Class
 
-  // class Family {
-  //   constructor(name, age, image, hunger, sleepiness, boredom) {
-  //     this.name = name;
-  //     this.age = age;
-  //     this.image = image;
-  //     this.hunger = hunger;
-  //     this.sleepiness = sleepiness;
-  //     this.boredom = boredom;
-  //     petList.push(this);
-  //   }
-  //   feedPet() {
-  //     this.hunger -= 1;
-  //   }
-  //   playWithPet() {
-  //     this.boredom -= 1;
-  //   }
-  //   lightsOff() {
-  //     this.sleepiness -= 1;
-  //   }
-  // } // End of Class
 
   const displayStats = function (tomagotchi) {
     $($statsDiv[tomagotchi.name]).text(`Hunger: ${tomagotchi.hunger} Boredom: ${tomagotchi.boredom} Sleepiness: ${tomagotchi.sleepiness}`);
@@ -121,9 +101,6 @@ $(() => { // main jquery function - process all jquery
   const pet2 = new Tomagotchi('sashimi', 5, "images/04-sushi.jpeg", 1, 2, 3);
   // const pet4 = new Tomagotchi('beachy', 5, "images/03-sushi.jpg", 1, 2, 3);
 
-  // const dad = new Family('sushi', 5, "images/01-sushi-solo.jpeg", 6, 2, 3);
-  // const mom = new Family('sashimi', 5, "images/04-sushi.jpeg", 1, 2, 3);
-  // const kid = new Family('beachy', 5, "images/03-sushi.jpg", 1, 2, 3);
 
   const addBabyToPetList = function () {
     const pet3 = new Tomagotchi('gumbino', 5, "images/02-sushi.jpg", 1, 2, 3);
