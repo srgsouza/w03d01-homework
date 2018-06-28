@@ -97,8 +97,8 @@ $(() => { // main jquery function - process all jquery
     lights(tomagotchi);
   }
 
-  const pet = new Tomagotchi('sushi', 5, "images/01-sushi-solo.jpeg", 1, 1, 1);
-  const pet2 = new Tomagotchi('sashimi', 5, "images/04-sushi.jpeg", 1, 2, 3);
+  const pet = new Tomagotchi('sushi', 5, "images/01-sushi-solo.jpeg", 1, 3, 4);
+  const pet2 = new Tomagotchi('sashimi', 5, "images/04-sushi.jpeg", 5, 1, 3);
   // const pet4 = new Tomagotchi('beachy', 5, "images/03-sushi.jpg", 1, 2, 3);
 
 
@@ -150,39 +150,56 @@ $(() => { // main jquery function - process all jquery
 
   //  Main Function 
   const game = (tomagotchi) => {
-    createButtons(tomagotchi);
-    let seconds = 0;
-    const timePasssing = (tomagotchi) => {
-      seconds++;
-      if (seconds % 3  == 0) {
-        tomagotchi.hunger++;
-      }
-      if (seconds % 5 == 0) {
-        tomagotchi.boredom++;
-      }
-      if (seconds % 7 == 0) {
-        tomagotchi.sleepiness++;
-      }
-      if (seconds % 3 == 0) {
-        tomagotchi.age++;
-        $('.baby-button').append($babyButton);
-      }
-      // ...
-      displayStats(tomagotchi);
-      
-      if (tomagotchi.hunger >= 10 || tomagotchi.boredom >= 10 || tomagotchi.sleepiness >= 10) {
-        console.log('Dead');
+    
+      createButtons(tomagotchi);
+      let seconds = 0;
+      const timePasssing = (tomagotchi) => {
+        seconds++;
+        if (petList.length > 2) {
+          tomagotchi.sleepiness = 10;
+          tomagotchi.boredom = 0;
+          if (seconds % 7 == 0) {
+            tomagotchi.hunger++;
+          }
+          if (seconds % 17 == 0) {
+            tomagotchi.age++;
+          }
+          displayStats(tomagotchi);
+          tomagotchi.sleepiness = 0;
+        } else {
+          if (seconds % 7 == 0) {
+            tomagotchi.hunger++;
+          }
+          if (seconds % 9 == 0) {
+            tomagotchi.boredom++;
+          }
+          if (seconds % 7 == 0) {
+            tomagotchi.sleepiness++;
+          }
+          if (seconds % 17 == 0) {
+            tomagotchi.age++;
+            $('.baby-button').append($babyButton);
+          }
+          displayStats(tomagotchi);
+          // tomagotchi.sleepiness = 0;
+        }
 
-        clearInterval(timePasses);
-        // Death stuff here
-        tomagotchi.image = "images/rotten-fish-2.jpeg";  // assign new image to the object
-        $image[tomagotchi.name].attr('src', tomagotchi.image); // inserts image into page
-        const name = tomagotchi.name.toUpperCase();
-        $statsDiv[tomagotchi.name].text(`${name} is DEAD!`);
-        $actionDiv[tomagotchi.name].hide();
-      }      
-    }
-    const timePasses = setInterval(timePasssing, 1000, tomagotchi);
+        // ...
+       
+        if (tomagotchi.hunger >= 10 || tomagotchi.boredom >= 10 || tomagotchi.sleepiness >= 10) {
+          console.log('Dead');
+
+          clearInterval(timePasses);
+          // Death stuff here
+          tomagotchi.image = "images/rotten-fish-2.jpeg";  // assign new image to the object
+          $image[tomagotchi.name].attr('src', tomagotchi.image); // inserts image into page
+          const name = tomagotchi.name.toUpperCase();
+          $statsDiv[tomagotchi.name].text(`${name} is DEAD!`);
+          $actionDiv[tomagotchi.name].hide();
+        }      
+      }
+      const timePasses = setInterval(timePasssing, 1000, tomagotchi);
+    
   }
 
   const makeBaby = function () {
