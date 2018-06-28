@@ -3,20 +3,51 @@
   padding: 0;
 }
 
-.tomagotchi-div {
-  background-color: gray;  
-  display: inline-block;  
+.btn {
+  display: inline-block;
+  margin: 0 auto;
 }
 
+.start-button {
+  display: flex;
+  justify-content: center;
+}
+
+.baby-button {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  display: inline;
+}
+
+.tomadiv {
+  margin: 5px;
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  align-content: center;
+}
+
+
 .image-div {
-  background-color: yellow; 
+ 
 }
 
 .stats-div {
-  background-color: green;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
 }
 
-.actions-div {
-  background-color: orange;
+.action-div {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  margin: 0 auto; 
+  display: block;
 }
 
